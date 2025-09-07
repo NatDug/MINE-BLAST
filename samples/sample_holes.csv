@@ -1,0 +1,6 @@
+hole_id,burden,spacing,diameter_mm,hole_depth_m,stemming_m,explosive_density_kg_m3,explosive_column_m
+A1,3.5,4.0,165,12,2,850,8
+A2,3.6,4.1,165,12,2,850,8
+A3,3.4,3.9,165,12,2,850,8
+B1,3.7,4.2,165,12,2,850,8
+B2,3.5,4.0,165,12,2,850,8

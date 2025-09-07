@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: mineblast-db
+    environment:
+      POSTGRES_USER: mine_user
+      POSTGRES_PASSWORD: mine_pass
+      POSTGRES_DB: mine_blast
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mine_user"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: mineblast-backend
+    env_file:
+      - ../backend/.env
+    environment:
+      POSTGRES_HOST: db
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:
