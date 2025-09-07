@@ -1,0 +1,265 @@
+.maps {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.maps-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.maps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.maps-header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.create-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-button:hover {
+  background-color: #229954;
+}
+
+.layer-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.layer-form h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-group small {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #229954;
+}
+
+.cancel-button {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #7f8c8d;
+}
+
+.map-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.map-sidebar {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ecf0f1;
+}
+
+.map-sidebar h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.no-layers {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.layers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.layer-item {
+  padding: 0.75rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #ecf0f1;
+}
+
+.layer-info h4 {
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.layer-type {
+  background-color: #3498db;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.map-view {
+  padding: 1rem;
+}
+
+/* Leaflet map styling */
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.leaflet-popup-content {
+  font-size: 0.9rem;
+}
+
+.leaflet-control-layers {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.map-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.map-info h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.feature-card h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
