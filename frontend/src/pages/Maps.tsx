@@ -196,9 +196,9 @@ const Maps: React.FC = () => {
                   <GeoJSON
                     data={layer.geojson}
                     style={getLayerStyle(layer.layer_type)}
-                    onEachFeature={(feature, layer) => {
+                    onEachFeature={(feature, leafletLayer) => {
                       if (feature.properties) {
-                        layer.bindPopup(`
+                        leafletLayer.bindPopup(`
                           <div>
                             <strong>${layer.name}</strong><br/>
                             ${Object.entries(feature.properties)
