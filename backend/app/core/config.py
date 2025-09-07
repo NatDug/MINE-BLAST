@@ -25,10 +25,16 @@ class Settings(BaseSettings):
 
 	@property
 	def database_url(self) -> str:
-		return (
-			f"postgresql+psycopg2://{self.postgres_user}:{self.postgres_password}@"
-			f"{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
-		)
+		# Use SQLite for easier local development
+		import os
+		sqlite_path = os.path.join(os.path.dirname(__file__), "..", "..", "mine_blast.db")
+		return f"sqlite:///{sqlite_path}"
+		
+		# Uncomment below for PostgreSQL
+		# return (
+		# 	f"postgresql+psycopg2://{self.postgres_user}:{self.postgres_password}@"
+		# 	f"{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
+		# )
 
 	class Config:
 		env_file = os.getenv("BACKEND_ENV_FILE", ".env")
