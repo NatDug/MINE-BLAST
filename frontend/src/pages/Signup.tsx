@@ -42,8 +42,8 @@ const Signup: React.FC = () => {
     try {
       await signup(formData.email, formData.password, formData.full_name);
       navigate('/');
-    } catch (err) {
-      setError('Signup failed. Please try again.');
+    } catch (err: any) {
+      setError(err.message || 'Signup failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -53,6 +53,9 @@ const Signup: React.FC = () => {
     <div className="signup-container">
       <div className="signup-card">
         <h2>Sign Up</h2>
+        <div className="demo-notice">
+          <small>💡 Demo Mode: Use any email/password if backend is not running</small>
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email</label>

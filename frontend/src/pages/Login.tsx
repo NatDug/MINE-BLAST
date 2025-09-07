@@ -29,8 +29,8 @@ const Login: React.FC = () => {
     try {
       await login(formData.username, formData.password);
       navigate('/');
-    } catch (err) {
-      setError('Invalid credentials. Please try again.');
+    } catch (err: any) {
+      setError(err.message || 'Invalid credentials. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -40,6 +40,9 @@ const Login: React.FC = () => {
     <div className="login-container">
       <div className="login-card">
         <h2>Login</h2>
+        <div className="demo-notice">
+          <small>💡 Demo Mode: Use any email/password if backend is not running</small>
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Email</label>
